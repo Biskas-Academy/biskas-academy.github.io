@@ -1,0 +1,159 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo as a link */
+header .logo a {
+    display: inline-block;
+}
+
+header .logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* Navigation menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Hero section (intro section) */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: #444;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Centering Course Cards */
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+    justify-items: center; /* Centers the cards horizontally */
+    align-items: center;   /* Centers the cards vertically */
+    min-height: 50vh;      /* Ensures enough height for centering */
+}
+
+.course-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.course-item:hover {
+    transform: translateY(-10px);
+}
+
+.course-item h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.course-item p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Footer fixed to the bottom */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+/* Social Links Section */
+.social-links {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.social-links h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.social-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links ul li {
+    display: inline-block;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links img {
+    width: 30px;
+    height: auto;
+}
