@@ -3,30 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Enroll in Biskas Academy</title>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 600px;
-      margin: 50px auto;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, select, button {
-      padding: 10px;
-      font-size: 1rem;
-    }
-    .success {
-      color: green;
-      margin-top: 1rem;
-    }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <!-- Logo as a clickable link -->
+        <div class="logo">
+            <a href="index.html"><img src="icons/logo.png" alt="Biskas Academy Logo"></a>
+        </div>
 
+        <!-- Navigation Links -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
   <h1>Enroll in Biskas Academy</h1>
   <form id="enrollForm">
     <input type="text" id="name" placeholder="Full Name" required>

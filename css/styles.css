@@ -157,3 +157,16 @@ footer {
     width: 30px;
     height: auto;
 }
+form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+input, select, button {
+    padding: 10px;
+    font-size: 1rem;
+}
+.success {
+    color: green;
+    margin-top: 1rem;
+}
