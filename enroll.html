@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enroll in Biskas Academy</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, select, button {
+      padding: 10px;
+      font-size: 1rem;
+    }
+    .success {
+      color: green;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enroll in Biskas Academy</h1>
+  <form id="enrollForm">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="number" id="age" placeholder="Age" required>
+    <select id="course" required>
+      <option value="">Select Course</option>
+      <option value="Mathematics">Mathematics</option>
+      <option value="Python Programming">Python Programming</option>
+      <option value="Web Development">Web Development</option>
+    </select>
+    <button type="submit">Submit Enrollment</button>
+  </form>
+
+  <div id="response" class="success"></div>
+
+  <script>
+    // Replace with your Supabase credentials
+    const supabase = supabase.createClient(
+      'https://pjrabhczetqafoqgvood.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqcmFiaGN6ZXRxYWZvcWd2b29kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzNjY2NzksImV4cCI6MjA2Mzk0MjY3OX0.9TgSRug4xJ7nMR4c4DvfPLCjXu37Epqb0i3MMMct99g'
+    );
+
+    const form = document.getElementById('enrollForm');
+    const responseDiv = document.getElementById('response');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const age = parseInt(document.getElementById('age').value);
+      const course = document.getElementById('course').value;
+
+      const { data, error } = await supabase
+        .from('enrollments')
+        .insert([{ name, email, age, course }]);
+
+      if (error) {
+        responseDiv.textContent = "Error submitting enrollment.";
+        console.error(error);
+      } else {
+        responseDiv.textContent = "Enrollment successful!";
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
